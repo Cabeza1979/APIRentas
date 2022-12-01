@@ -7,7 +7,7 @@ const server = express(); //servidor creado
 server.use(express.json());  // midellware para convertir los datos entrantes (body en json) a objetos JS
 server.use(morgan("dev"));
 
-server.use("/crm", crmRouter);
+//server.use("/crm", crmRouter);
 
 // server.get("/", (req,res)=>{
 //     try {
@@ -39,12 +39,12 @@ server.get("/crm",(req, res)=>{
    
     const response = 
         {
-            codigocaso:codigocaso,
+            codigocaso,
             statuscode,
             EsFinalizado,
             Cuit
         };
-    res.status(200).send(response);
+    res.status(200).json(response);
 
    } catch (error) {
     return res.status(400).json(error);
