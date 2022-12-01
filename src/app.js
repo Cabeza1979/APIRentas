@@ -32,6 +32,22 @@ server.post("/",(req, res)=>{
    }
 });
 
+server.put("/",(req, res)=>{
+    const {codigocaso, statuscode, EsFinalizado, Cuit} = req.body;
+   try {
+    const response = {
+        CodigoError: "UCE-01",
+        Descripcion: "Estado actualizado correctamente",
+        Fecha: "2022-11-02T12:45:30.764Z",
+        codigocaso
+    };
+    res.status(200).json(response);
+
+   } catch (error) {
+    return res.status(404).json(error);
+   }
+});
+
 server.get("/crm",(req, res)=>{
     const {codigocaso, statuscode, EsFinalizado, Cuit} = req.body;
     console.log(req.body);
