@@ -23,7 +23,7 @@ server.get("/",(req, res)=>{
     
     const response = {
         CodigoError: "UCE-01",
-        Descripcion: "Cuit erroneo",
+        Descripcion: "Estado actualizado correctamente",
         Fecha: "2022-11-02T12:45:30.764Z"
     };
     res.status(200).json(response);
