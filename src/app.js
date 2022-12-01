@@ -17,10 +17,9 @@ server.use(morgan("dev"));
 //        }
 // });
 
-server.get("/",(req, res)=>{
-    
+server.post("/",(req, res)=>{
+    const {codigocaso, statuscode, EsFinalizado, Cuit} = req.body;
    try {
-    
     const response = {
         CodigoError: "UCE-01",
         Descripcion: "Estado actualizado correctamente",
