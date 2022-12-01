@@ -9,15 +9,15 @@ server.use(morgan("dev"));
 
 server.use("/crm", crmRouter);
 
-server.get("/", (req,res)=>{
-    try {
-        res.status(200).json("Welcome to the jungle");
-       } catch (error) {
-        return res.status(400).json(error);
-       }
-});
+// server.get("/", (req,res)=>{
+//     try {
+//         res.status(200).json("Welcome to the jungle");
+//        } catch (error) {
+//         return res.status(400).json(error);
+//        }
+// });
 
-server.put("/",(req, res)=>{
+server.get("/",(req, res)=>{
     const {codigocaso, statuscode, EsFinalizado, Cuit} = req.body;
    try {
     if (!codigocaso || !statuscode || !EsFinalizado || !Cuit) throw Error("missing info");
