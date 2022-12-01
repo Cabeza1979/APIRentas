@@ -33,5 +33,22 @@ server.get("/",(req, res)=>{
    }
 });
 
+server.get("/crm",(req, res)=>{
+    const {codigocaso, statuscode, EsFinalizado, Cuit} = req.body;
+   try {
+    // if (!codigocaso || !statuscode || !EsFinalizado || !Cuit) throw Error("missing info");
+    const response = 
+        {
+            codigocaso,
+            statuscode,
+            EsFinalizado,
+            Cuit
+        };
+    res.status(200).json(response);
+
+   } catch (error) {
+    return res.status(400).json(error);
+   }
+});
 
 module.exports = server;
