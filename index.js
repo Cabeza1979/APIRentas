@@ -1,7 +1,7 @@
 // se encarga solamente de levantar nuestro servidor
 const server = require("./src/app.js");
-
+const port = process.env.PORT || 3001 ;
 // server.listen
-server.listen("3001", () => {
-    console.log("server listening on port 3001");
+server.listen(port, () => {
+    console.log(`server listening on port ${port}`);
 });
