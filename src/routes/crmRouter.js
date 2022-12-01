@@ -2,8 +2,7 @@ const { Router } = require("express");
 
 const crmRouter = Router(); 
 
-
-crmRouter.get("/",(req, res)=>{
+crmRouter.put("/",(req, res)=>{
     const {codigocaso, statuscode, EsFinalizado, Cuit} = req.body;
    try {
     if (!codigocaso || !statuscode || !EsFinalizado || !Cuit) throw Error("missing info");
@@ -13,8 +12,9 @@ crmRouter.get("/",(req, res)=>{
         Fecha: "2022-11-02T12:45:30.764Z"
     };
     res.status(200).json(response);
+
    } catch (error) {
-    return res.status(400).json(error);
+    return res.status(400).json("error catch");
    }
 });
 
