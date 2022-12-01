@@ -11,7 +11,7 @@ server.use("/crm", crmRouter);
 
 server.get("/", (req,res)=>{
     try {
-        res.status(200).json("EWlcome to the jungle");
+        res.status(200).json("Welcome to the jungle");
        } catch (error) {
         return res.status(400).json(error);
        }

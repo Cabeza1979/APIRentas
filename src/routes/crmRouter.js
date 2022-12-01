@@ -18,12 +18,4 @@ crmRouter.put("/",(req, res)=>{
    }
 });
 
-crmRouter.get("/",(req, res)=>{
-    try {
-     res.status(200).json("Vaya por PUT...");
-    } catch (error) {
-     return res.status(400).json(error);
-    }
- });
- 
 module.exports = crmRouter;
