@@ -3,7 +3,7 @@ const { Router } = require("express");
 const crmRouter = Router(); 
 
 
-crmRouter.put("/",(req, res)=>{
+crmRouter.get("/",(req, res)=>{
     const {codigocaso, statuscode, EsFinalizado, Cuit} = req.body;
    try {
     if (!codigocaso || !statuscode || !EsFinalizado || !Cuit) throw Error("missing info");
