@@ -23,7 +23,7 @@ server.get("/",(req, res)=>{
     
     const response = {
         CodigoError: "UCE-01",
-        Descripcion: "Estado actualizado correctamente",
+        Descripcion: "Cuit erroneo",
         Fecha: "2022-11-02T12:45:30.764Z"
     };
     res.status(200).json(response);
@@ -35,6 +35,7 @@ server.get("/",(req, res)=>{
 
 server.get("/crm",(req, res)=>{
     const {codigocaso, statuscode, EsFinalizado, Cuit} = req.body;
+    console.log(req.body);
    try {
    
     const response = 
@@ -44,6 +45,7 @@ server.get("/crm",(req, res)=>{
             EsFinalizado,
             Cuit
         };
+        console.log(response);
     res.status(200).json(response);
 
    } catch (error) {
