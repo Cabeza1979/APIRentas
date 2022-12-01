@@ -18,9 +18,9 @@ server.use("/crm", crmRouter);
 // });
 
 server.get("/",(req, res)=>{
-    const {codigocaso, statuscode, EsFinalizado, Cuit} = req.body;
+    
    try {
-    // if (!codigocaso || !statuscode || !EsFinalizado || !Cuit) throw Error("missing info");
+    
     const response = {
         CodigoError: "UCE-01",
         Descripcion: "Estado actualizado correctamente",
@@ -44,7 +44,7 @@ server.get("/crm",(req, res)=>{
             EsFinalizado,
             Cuit
         };
-    res.status(200).json(response);
+    res.status(200).send(response);
 
    } catch (error) {
     return res.status(400).json(error);
