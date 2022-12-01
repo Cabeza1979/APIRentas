@@ -36,10 +36,10 @@ server.get("/",(req, res)=>{
 server.get("/crm",(req, res)=>{
     const {codigocaso, statuscode, EsFinalizado, Cuit} = req.body;
    try {
-    // if (!codigocaso || !statuscode || !EsFinalizado || !Cuit) throw Error("missing info");
+   
     const response = 
         {
-            codigocaso,
+            codigocaso:codigocaso,
             statuscode,
             EsFinalizado,
             Cuit
