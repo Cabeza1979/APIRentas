@@ -49,16 +49,15 @@ server.put("/",(req, res)=>{
 });
 
 server.get("/crm",(req, res)=>{
-    const {codigocaso, statuscode, EsFinalizado, Cuit} = req.body;
+    
     console.log(req.body);
    try {
    
     const response = 
         {
-            codigocaso,
-            statuscode,
-            EsFinalizado,
-            Cuit
+            CodigoError: "UCE-01",
+            Descripcion: "Estado actualizado correctamente",
+            Fecha: "2022-11-02T12:45:30.764Z",
         };
         console.log(response);
     res.status(200).json(response);
