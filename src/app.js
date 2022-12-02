@@ -39,7 +39,6 @@ server.put("/",(req, res)=>{
         CodigoError: "UCE-01",
         Descripcion: "Estado actualizado correctamente",
         Fecha: "2022-11-02T12:45:30.764Z",
-        codigocaso
     };
     res.status(200).json(response);
 
@@ -48,16 +47,17 @@ server.put("/",(req, res)=>{
    }
 });
 
-server.get("/crm",(req, res)=>{
-    
+server.put("/crm",(req, res)=>{
+    const {codigocaso, statuscode, EsFinalizado, Cuit} = req.body;
     console.log(req.body);
    try {
    
     const response = 
         {
-            CodigoError: "UCE-01",
-            Descripcion: "Estado actualizado correctamente",
-            Fecha: "2022-11-02T12:45:30.764Z",
+            codigocaso,
+            statuscode,
+            EsFinalizado,
+             Cuit
         };
         console.log(response);
     res.status(200).json(response);
