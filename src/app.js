@@ -7,7 +7,7 @@ const server = express(); //servidor creado
 server.use(express.json());  // midellware para convertir los datos entrantes (body en json) a objetos JS
 server.use(morgan("dev"));
 
-server.put("/",(req, res)=>{
+server.post("/rentas",(req, res)=>{
     const {cuenta, fecha_operacion, nomenclatura, vigencia_desde} = req.body;
     var cuenta_in = cuenta;
     var fechaVigenciaDesde=vigencia_desde;
