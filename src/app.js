@@ -7,90 +7,41 @@ const server = express(); //servidor creado
 server.use(express.json());  // midellware para convertir los datos entrantes (body en json) a objetos JS
 server.use(morgan("dev"));
 
-server.put("/00",(req, res)=>{
-    const {codigocaso, statuscode, EsFinalizado, Cuit} = req.body;
-    const Fecha = new Date();
-    Fecha.toISOString;
-   try {
-    const response = {
-        CodigoError: "UCE-00",
-        Descripcion: "No ha sido posible actualizar el estado",
-        Fecha,
-    };
-    res.status(200).json(response);
-
-   } catch (error) {
-    return res.status(404).json(error);
-   }
-});
-
-server.put("/01",(req, res)=>{
-    const {codigocaso, statuscode, EsFinalizado, Cuit} = req.body;
-    const Fecha = new Date();
-    Fecha.toISOString;
-   try {
-    const response = {
-        CodigoError: "UCE-01",
-        Descripcion: "Estado actualizado correctamente",
-        Fecha,
-    };
-    res.status(200).json(response);
-
-   } catch (error) {
-    return res.status(404).json(error);
-   }
-});
-
-server.put("/02",(req, res)=>{
-    const {codigocaso, statuscode, EsFinalizado, Cuit} = req.body;
-    const Fecha = new Date();
-    Fecha.toISOString;
-   try {
-    const response = {
-        CodigoError: "UCE-02",
-        Descripcion: "No existe el caso Jelou",
-        Fecha,
-    };
-    res.status(200).json(response);
-
-   } catch (error) {
-    return res.status(404).json(error);
-   }
-});
-
-server.put("/03",(req, res)=>{
-    const {codigocaso, statuscode, EsFinalizado, Cuit} = req.body;
-    const Fecha = new Date();
-    Fecha.toISOString;
-   try {
-    const response = {
-        CodigoError: "UCE-02",
-        Descripcion: `El usuario cuit ${Cuit} no coincide con el propietario del caso`,
-        Fecha,
-    };
-    res.status(200).json(response);
-
-   } catch (error) {
-    return res.status(404).json(error);
-   }
-});
-server.put("/crm",(req, res)=>{
-    const {codigocaso, statuscode, EsFinalizado, Cuit} = req.body;
-    console.log(req.body);
-   try {
-   
-    const response = 
-        {
-            codigocaso,
-            statuscode,
-            EsFinalizado,
-             Cuit
+server.put("/",(req, res)=>{
+    const {cuenta, fecha_operacion, nomenclatura, vigencia_desde} = req.body;
+    var cuenta_in = cuenta;
+    var fechaVigenciaDesde=vigencia_desde;
+    var condicion="NP";
+    
+    try {
+       if(cuenta_in%2){
+            condicion="P";
+            fechaVigenciaDesde="01/01/2025";
+       }
+        
+        const response = {
+            status: {
+                action: null,
+                messages: [
+                    {
+                        type: "success",
+                        description: "OK",
+                        code: ""
+                    }
+                ],
+                appId: "044",
+                success: "TRUE"
+            },
+            data: {
+                condicion,
+                fechaVigenciaDesde
+            }       
         };
-        console.log(response);
+       
     res.status(200).json(response);
 
    } catch (error) {
-    return res.status(400).json(error);
+    return res.status(404).json(error);
    }
 });
 

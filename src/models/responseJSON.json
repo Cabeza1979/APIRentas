@@ -1,5 +1,18 @@
 {
-    "CodigoError": "UCE-01",
-    "Descripcion": "Estado actualizado correctamente",
-    "Fecha": "2022-11-02T12:45:30.764Z"
+    "status": {
+        "action": null,
+        "messages": [
+            {
+                "type": "success",
+                "description": "OK",
+                "code": ""
+            }
+        ],
+        "appId": "044",
+        "success": "TRUE"
+    },
+    "data": {
+        "condicion": "NP",
+        "fechaVigenciaDesde": "2024-01-01 00:00:00.0"
+    }
 }

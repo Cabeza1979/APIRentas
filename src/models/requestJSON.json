@@ -1,6 +1,6 @@
 {
-    "codigocaso": "CBA-82629-Q4D1T1",
-    "statuscode": "1",
-    "EsFinalizado": "false",
-    "Cuit": "20123456781"
-}
+    "cuenta":"310331879966",
+    "fecha_operacion":"15/11/2023",
+    "nomenclatura":"3103220101005020000",
+    "vigencia_desde":"01/01/2024"
+    }
