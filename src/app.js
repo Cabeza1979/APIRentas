@@ -14,7 +14,7 @@ server.post("/rentas",(req, res)=>{
     var condicion="NP";
     
     try {
-       if(!cuenta_in%2){
+       if(cuenta_in%2==0){
             condicion="P";
             fechaVigenciaDesde="01/01/2025";
        }
